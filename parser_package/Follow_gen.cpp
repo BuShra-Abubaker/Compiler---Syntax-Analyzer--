@@ -1,7 +1,8 @@
 #include "Follow_gen.h"
 
-Follow_gen::Follow_gen(){
+Follow_gen::Follow_gen(Graph *graph){
     //Constructor
+    this->graph = graph;
     generate_follows();
 }
 
