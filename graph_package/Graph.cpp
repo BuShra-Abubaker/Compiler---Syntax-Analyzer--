@@ -13,6 +13,10 @@ void Graph::get_child(string  node_name)
 {
 }
 
+void Graph::add_new_node(string node_name){
+
+}
+
 Graph::~Graph(){
     //Destructor
 }
