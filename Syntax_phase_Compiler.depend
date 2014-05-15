@@ -47,3 +47,24 @@
 	"First_gen.h"
 	"unordered_map"
 
+1400150998 source:c:\codeblocks_workspace\syntax_phase_compiler\graph_package\graph.cpp
+	"Graph.h"
+
+1400150998 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\graph.h
+	<iostream>
+
+1400150998 source:c:\codeblocks_workspace\syntax_phase_compiler\graph_package\node.cpp
+	"Node.h"
+
+1400150998 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\node.h
+
+1385316878 source:c:\codeblocks_workspace\syntax_phase_compiler\main.cpp
+	<iostream>
+
+1400150998 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\cfg_reader.cpp
+	"CFG_Reader.h"
+
+1400150998 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\cfg_reader.h
+	<iostream>
+	"../graph_package/Graph.h"
+
