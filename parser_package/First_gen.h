@@ -3,7 +3,6 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
-
 #include "../graph_package/Node.h"
 #include "../graph_package/Graph.h"
 
@@ -12,13 +11,12 @@ using namespace std;
 class First_gen {
 
  public:
-    First_gen();
-
+    First_gen(Graph *graph);
     virtual vector<Node> get_first(string  node_name);
 
     ~First_gen();
  private:
-    Graph graph;
+    Graph *graph;
 
     vector<Node> firsts;
     void generate_firsts();
