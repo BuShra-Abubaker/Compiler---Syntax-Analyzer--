@@ -7,7 +7,7 @@ First_gen::First_gen(){
     generate_firsts();
 }
 
-string First_gen::get_first(string  node_name)
+vector<string> First_gen::get_first(string  node_name)
 {
 }
 

@@ -27,32 +27,59 @@ void CFG_Reader::generate_cfg(string  file_path)
         }
 
         grammar_file.close();
-        return get_language_graph();
     }
     else   // Error in opening file
-    {
-        cout << "Unable to open file";
-        return NULL;
-    }
+        cout << "Unable to open file!";
+
+
 }
 
-CFG_Reader::handle_new_rule(string line)
+void CFG_Reader::handle_new_rule(string line)
 {
     int i  = 0;
     while(i < line.length() && (line[i] == ' ' || line[i] == '\t') ) // Skip white space
         i++;
 
-    for(; i < line.length() ; i++)
+    stringstream new_non_terminal;
+    if( line[i] == '#' ) // New Rule
     {
-        if( line[i] == '#' ) // New Rule
-        {
+        while(i < line.length() && line[i] != ' ' && line[i] != '\t') // non terminal name
+            new_non_terminal << line[i++];
 
+        while(i < line.length() && (line[i] == ' ' || line[i] == '\t') ) // Skip white space
+            i++;
+
+        if( line[i] != '=') // Error
+        {
+            cout<< "ERROR: The following line don't have '=':"<<endl << line << endl;
+            return; //skip line
         }
-        else   // Old Rule
-        {
 
+        // No Error >>
+
+        string node_name = new_non_terminal.str();
+
+        //Create new node with new non terminal name
+        if( graph.add_new_node(node_name) )
+            non_terminals.insert(pair<string,int>( node_name,  non_teminals_count++ )); // Add the non terminal to non_terminal list
+
+
+        for(; i < line.length() ; i++)
+        {
+            if( line[i] == ' ' || line[i] == '\t') // skip white space
+                continue;
+
+            if(line[i] == '\''){ // Start of Terminal
+            }
         }
     }
+    else   // Old Rule
+    {
+
+    }
+
+
+
 }
 
 Graph CFG_Reader::get_cfg_graph()
