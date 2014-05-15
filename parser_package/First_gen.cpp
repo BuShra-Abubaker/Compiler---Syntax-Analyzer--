@@ -2,8 +2,9 @@
 
 
 
-First_gen::First_gen(){
+First_gen::First_gen(Graph *graph){
     //Constructor
+    this->graph = graph;
     generate_firsts();
 }
 

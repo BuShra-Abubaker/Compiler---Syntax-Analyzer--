@@ -10,13 +10,13 @@ using namespace std;
 class Follow_gen {
 
  public:
-    Follow_gen();
+    Follow_gen(Graph *graph);
 
     virtual vector<Node> get_follow(string  node_name);
 
     virtual~Follow_gen();
  private:
-    Graph graph;
+    Graph *graph;
 
     virtual void generate_follows();
 

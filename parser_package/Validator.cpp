@@ -3,7 +3,7 @@
 
 
 
-Validator::Validator(Parsing_table_gen  parsingtable, unordered_map<string , int> terminals , unordered_map<string , int> non_terminals)
+Validator::Validator(Parsing_table_gen  *parsingtable, unordered_map<string , int> *terminals , unordered_map<string , int> *non_terminals)
 {
     //Constructor
 }

@@ -11,13 +11,13 @@ using namespace std;
 class First_gen {
 
  public:
-    First_gen();
+    First_gen(Graph *graph);
 
     virtual vector<Node> get_first(string  node_name);
 
     virtual~First_gen();
  private:
-    Graph graph;
+    Graph *graph;
 
     virtual void generate_firsts();
 
