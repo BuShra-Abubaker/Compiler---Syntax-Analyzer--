@@ -3,23 +3,24 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+
+#include "../graph_package/Node.h"
 #include "../graph_package/Graph.h"
 
 using namespace std;
+//struct myNode {string production; vector<string> first;};
 class First_gen {
 
  public:
     First_gen();
 
-    unordered_map<string, vector<string> > get_firsts;
-
-    vector<string> get_first(string  node_name);
+    virtual vector<Node> get_first(string  node_name);
 
     ~First_gen();
  private:
     Graph graph;
 
-    vector<string> children;
+    vector<Node> firsts;
     void generate_firsts();
 
 };
