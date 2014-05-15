@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+
+#include "../graph_package/Node.h"
 #include "../graph_package/Graph.h"
 
 using namespace std;
@@ -11,7 +13,7 @@ class First_gen {
  public:
     First_gen();
 
-    virtual vector<string> get_first(string  node_name);
+    virtual vector<Node> get_first(string  node_name);
 
     virtual~First_gen();
  private:

@@ -5,7 +5,7 @@ Follow_gen::Follow_gen(){
     generate_follows();
 }
 
-vector<string> Follow_gen::get_follow(string  node_name)
+vector<Node> Follow_gen::get_follow(string  node_name)
 {
 
 }
