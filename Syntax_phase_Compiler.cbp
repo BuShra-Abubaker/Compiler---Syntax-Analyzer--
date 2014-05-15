@@ -36,8 +36,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Parsing_table_gen.cpp" />
-		<Unit filename="Parsing_table_gen.h" />
 		<Unit filename="graph_package/Graph.cpp" />
 		<Unit filename="graph_package/Graph.h" />
 		<Unit filename="graph_package/Node.cpp" />
@@ -51,6 +49,8 @@
 		<Unit filename="parser_package/Follow_gen.h" />
 		<Unit filename="parser_package/Parser.cpp" />
 		<Unit filename="parser_package/Parser.h" />
+		<Unit filename="parser_package/Parsing_table_gen.cpp" />
+		<Unit filename="parser_package/Parsing_table_gen.h" />
 		<Unit filename="parser_package/Validator.cpp" />
 		<Unit filename="parser_package/Validator.h" />
 		<Extensions>

@@ -1,6 +1,7 @@
 #ifndef CFG_Reader_h
 #define CFG_Reader_h
 
+#include <fstream>
 #include <iostream>
 
 #include "../graph_package/Graph.h"
@@ -19,13 +20,8 @@ class CFG_Reader {
     Graph graph;
 
     void generate_cfg(string  file_path);
+    void handle_new_rule(string line);
 
- public:
-
-    /**
-     * @element-type Graph
-     */
-    Graph myGraph;
 
 };
 

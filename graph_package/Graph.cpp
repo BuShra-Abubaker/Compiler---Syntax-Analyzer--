@@ -4,12 +4,12 @@ Graph::Graph(){
     //Constructor
 }
 
-void Graph::add_child(string  name)
+void Graph::add_child(string  source , string destination)
 {
 
 }
 
-void Graph::get_child(string  name)
+void Graph::get_child(string  node_name)
 {
 }
 
