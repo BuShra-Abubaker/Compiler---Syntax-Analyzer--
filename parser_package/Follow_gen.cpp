@@ -6,8 +6,9 @@ Follow_gen::Follow_gen(Graph *graph){
     generate_follows();
 }
 
-vector<Node> Follow_gen::get_follow(string  node_name)
+vector<string> Follow_gen::get_follow(string  node_name)
 {
+
 
 }
 

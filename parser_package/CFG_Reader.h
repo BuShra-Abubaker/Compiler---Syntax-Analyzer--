@@ -49,6 +49,7 @@ class CFG_Reader {
 
     void generate_cfg(string  file_path);
     void handle_new_rule(string line);
+    void handle_RHS(string line , int i , string non_terminal_name);
 
 
 };
