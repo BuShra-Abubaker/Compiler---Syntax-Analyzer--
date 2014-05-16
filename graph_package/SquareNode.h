@@ -12,6 +12,7 @@ class SquareNode
     public:
         SquareNode();
         virtual ~SquareNode();
+
     protected:
     private:
         vector<CircleNode> nodes;

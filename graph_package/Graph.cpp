@@ -1,10 +1,5 @@
 #include "Graph.h"
 
-
-
-
-
-
 Graph::Graph(){
     //Constructor
 }
@@ -12,16 +7,21 @@ Graph::Graph(){
 
 
 // if the node was already exist return false else add to the graph and return true
-bool Graph::add_new_node(string node_name){
-    return true;
+bool Graph::add_start_node(string node_name){
+    start_node = CircleNode();
+    nodeMap.insert(pair<string, CircleNode> (node_name, start_node));
 }
 
-void Graph::add_child(string  source , string destination)
+CircleNode Graph::get_start_node(){
+    return start_node;
+}
+
+void Graph::add_child(string  source , vector<string> destination)
 {
 
 }
 
-void Graph::get_child(string  node_name)
+vector<SquareNode> Graph::get_child(string  node_name)
 {
 
 }

@@ -3,38 +3,32 @@
 First_gen::First_gen(Graph *graph){
     //Constructor
     this->graph = graph;
-    start_node = graph->get_start_node;
-    generate_firsts();
+    start_node = graph->get_start_node();
+    generate_firsts(start_node.get_name());
 }
 
 vector<my_node> *First_gen::get_first(string  node_name)
 {
-//    SquareNode child = graph->get_child(node_name);
-//    for(int i = 0 ; i < child.size(); i++)
-//    {
-//        if (graph->get_child(child[i]).size() == 0 )
-//        {
-////            firsts.push_back(child[i]);
-////            if(node_name has Epslion)get_first(child{i+1})
-//                break;
-//        }
-//        else get_first(child[i]);
-//    }
-
     return &(first_set[node_name]);
 }
 
 void First_gen::generate_firsts(string current_node)
 {
-    current_node = start_node;
-//    graph->get_child(); // need getChild to return
-//    SquareNode child;
-
-    //  if (Node.type != square_node && Node.type != final_node)
-//        get_first(start_node);
-
-
-
+    vector<CircleNode> circle_nodes_child;
+    vector<SquareNode> square_nodes_child = graph->get_child(current_node);
+    for(int i = 0 ; i < square_nodes_child.size(); i++)
+    {
+        circle_nodes_child = square_nodes_child[i].childs;
+        for(int j = 0 ; j < circle_nodes_child.size() ; j++)
+        {
+            if (graph->get_child((circle_nodes_child.childs[i])).size() == 0)
+                first_set.insert(make_pair<current_node, my_node.first.push(circle_nodes_child.childs[i]));
+            else
+                generate_firsts((circle_nodes_child.childs[i]));
+        }
+    }
+        else
+            first_set.insert(make_pair<current_node, my_node.first.push(circle_nodes_child.childs[i]));
 }
 
 First_gen::~First_gen(){

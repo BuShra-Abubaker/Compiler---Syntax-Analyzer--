@@ -19,10 +19,10 @@ class First_gen {
     ~First_gen();
  private:
     Graph *graph;
-    string start_node;
+    CircleNode start_node;
     unordered_map<string, vector<my_node> > first_set;
 
-    void generate_firsts();
+    void generate_firsts(string current_node);
 
 };
 
