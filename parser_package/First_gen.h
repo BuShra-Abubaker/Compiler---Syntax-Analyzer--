@@ -7,18 +7,19 @@
 #include "../graph_package/Graph.h"
 
 using namespace std;
-//struct myNode {string production; vector<string> first;};
 class First_gen {
 
  public:
     First_gen(Graph *graph);
-    virtual vector<Node> get_first(string  node_name);
-
+    unordered_map<string, vector<string> > non-terminals_firsts;
+    virtual vector<string> get_first(string  node_name);
+e
     ~First_gen();
  private:
     Graph *graph;
 
-    vector<Node> firsts;
+    Node* start_node;
+    vector<string> firsts;
     void generate_firsts();
 
 };

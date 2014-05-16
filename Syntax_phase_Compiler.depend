@@ -54,19 +54,21 @@
 	"First_gen.h"
 	"unordered_map"
 
-<<<<<<< HEAD
 1400119391 D
 
-1400187059 source:c:\codeblocks_workspace\syntax_phase_compiler\graph_package\graph.cpp
+1400240290 source:c:\codeblocks_workspace\syntax_phase_compiler\graph_package\graph.cpp
 	"Graph.h"
 
-1400187059 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\graph.h
+1400240290 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\graph.h
 	<iostream>
+	<vector>
+	"Node.h"
 
 1400150998 source:c:\codeblocks_workspace\syntax_phase_compiler\graph_package\node.cpp
 	"Node.h"
 
-1400196285 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\node.h
+1400240622 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\node.h
+	<string>
 
 1385316878 source:c:\codeblocks_workspace\syntax_phase_compiler\main.cpp
 	<iostream>
@@ -83,10 +85,9 @@
 
 1400150998 package/Graph.h"
 
-1400119469 source:c:\users\mohamed\google drive\myworkspace\c++\compiler - syntax analyzer\parser_package\validator.cpp
-=======
 1400187027 source:c:\users\mohamed\google drive\myworkspace\c++\compiler - syntax analyzer\parser_package\validator.cpp
->>>>>>> 4aad250764844ac272d38b714f7efe16dab8082d
+
+1400187027 d250764844ac272d38b714f7efe16dab8082d
 	"Validator.h"
 
 1400187042 c:\users\mohamed\google drive\myworkspace\c++\compiler - syntax analyzer\parser_package\validator.h
@@ -97,10 +98,10 @@
 
 1400119249 de1cc9e9f0c3318235a50ac682045de38dcfd
 
-1400187059 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\follow_gen.cpp
+1400197045 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\follow_gen.cpp
 	"Follow_gen.h"
 
-1400187059 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\follow_gen.h
+1400197045 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\follow_gen.h
 	<iostream>
 	<vector>
 	"../graph_package/Node.h"
@@ -111,21 +112,21 @@
 
 1400150998 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\parser.h
 
-1400150998 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\validator.cpp
+1400197045 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\validator.cpp
 	"Validator.h"
 
-1400150998 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\validator.h
+1400197045 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\validator.h
 	"vector"
 	"unordered_map"
 	<iostream>
 	"Parsing_table_gen.h"
 
-1400150998 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\parsing_table_gen.h
+1400197045 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\parsing_table_gen.h
 	"Follow_gen.h"
 	"First_gen.h"
 	"unordered_map"
 
-1400196295 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\first_gen.h
+1400241018 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\first_gen.h
 	<iostream>
 	<unordered_map>
 	<vector>

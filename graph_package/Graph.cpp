@@ -16,7 +16,7 @@ void Graph::add_child(string  source , string destination)
 
 }
 
-void Graph::get_child(string  node_name)
+vector<string> Graph::get_child(string  node_name) //needs to return something here (Bushra)
 {
 }
 
