@@ -2,6 +2,9 @@
 
 
 
+string CircleNode::get_name(){
+    return name;
+}
 CircleNode::CircleNode()
 {
 

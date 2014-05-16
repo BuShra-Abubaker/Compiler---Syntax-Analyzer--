@@ -23,10 +23,9 @@ CircleNode Graph::get_start_node(){
 
 void Graph::add_child(string  source , vector<string> destination)
 {
-
 }
 
-void Graph::get_child(string  node_name)
+vector<SquareNode> Graph::get_child(string  node_name)
 {
 
 }

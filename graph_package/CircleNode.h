@@ -13,6 +13,7 @@ class CircleNode
     public:
         CircleNode();
         virtual ~CircleNode();
+        string get_name();
     protected:
     private:
         vector<SquareNode> childs;
