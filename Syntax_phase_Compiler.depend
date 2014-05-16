@@ -131,7 +131,7 @@
 	"../graph_package/Graph.h"
 	"../graph_package/SquareNode.h"
 
-1400252155 source:f:\syntax analyzer\graph_package\graph.cpp
+1400255097 source:f:\syntax analyzer\graph_package\graph.cpp
 	"Graph.h"
 
 1400251018 f:\syntax analyzer\graph_package\graph.h
@@ -208,7 +208,7 @@
 	"CircleNode.h"
 	<vector>
 
-1400251573 source:f:\syntax analyzer\graph_package\squarenode.cpp
+1400253697 source:f:\syntax analyzer\graph_package\squarenode.cpp
 	"SquareNode.h"
 
 1400250936 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\squarenode.h
@@ -227,4 +227,12 @@
 
 1400251974 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\first_gen.cpp
 	"First_gen.h"
+
+1400255097 source:f:\syntax analyzer\test_pacakge\graphtest.cpp
+	"GraphTest.h"
+
+1400253689 f:\syntax analyzer\test_pacakge\graphtest.h
+	"../graph_package/CircleNode.h"
+	"../graph_package/SquareNode.h"
+	"../graph_package/Graph.h"
 
