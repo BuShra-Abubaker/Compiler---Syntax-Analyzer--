@@ -5,7 +5,6 @@ Graph::Graph(){
 }
 
 
-
 // if the node was already exist return false else add to the graph and return true
 bool Graph::add_start_node(string node_name){
     start_node = CircleNode();
