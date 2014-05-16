@@ -130,11 +130,12 @@
 	"../graph_package/Node.h"
 	"../graph_package/Graph.h"
 
-1400245853 source:f:\syntax analyzer\graph_package\graph.cpp
+1400246582 source:f:\syntax analyzer\graph_package\graph.cpp
 	"Graph.h"
 
-1400246086 f:\syntax analyzer\graph_package\graph.h
+1400246759 f:\syntax analyzer\graph_package\graph.h
 	<iostream>
+	<vector>
 
 1400190813 source:f:\syntax analyzer\graph_package\node.cpp
 	"Node.h"
@@ -153,4 +154,56 @@
 	<sstream>
 	"unordered_map"
 	"../graph_package/Graph.h"
+
+1400245966 source:f:\syntax analyzer\parser_package\first_gen.cpp
+	"First_gen.h"
+
+1400245966 f:\syntax analyzer\parser_package\first_gen.h
+	<iostream>
+	<unordered_map>
+	<vector>
+	"../graph_package/Node.h"
+	"../graph_package/Graph.h"
+
+1400190813 source:f:\syntax analyzer\parser_package\follow_gen.cpp
+	"Follow_gen.h"
+
+1400190813 f:\syntax analyzer\parser_package\follow_gen.h
+	<iostream>
+	<vector>
+	"../graph_package/Node.h"
+	"../graph_package/Graph.h"
+
+1400190813 source:f:\syntax analyzer\parser_package\parser.cpp
+	"Parser.h"
+
+1400190813 f:\syntax analyzer\parser_package\parser.h
+
+1400190813 source:f:\syntax analyzer\parser_package\validator.cpp
+	"Validator.h"
+
+1400190813 f:\syntax analyzer\parser_package\validator.h
+	"vector"
+	"unordered_map"
+	<iostream>
+	"Parsing_table_gen.h"
+
+1400190813 f:\syntax analyzer\parser_package\parsing_table_gen.h
+	"Follow_gen.h"
+	"First_gen.h"
+	"unordered_map"
+
+1400246824 source:f:\syntax analyzer\graph_package\circlenode.cpp
+	"CircleNode.h"
+
+1400247084 f:\syntax analyzer\graph_package\circlenode.h
+	<vector>
+	"SquareNode.h"
+
+1400247072 f:\syntax analyzer\graph_package\squarenode.h
+	"CircleNode.h"
+	<vector>
+
+1400246824 source:f:\syntax analyzer\graph_package\squarenode.cpp
+	"SquareNode.h"
 

@@ -2,16 +2,12 @@
 #define Graph_h
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-struct SquareNode{
 
-};
 
-struct CircleNode{
-
-};
 
 class Graph {
 
