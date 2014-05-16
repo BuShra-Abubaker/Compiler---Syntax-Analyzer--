@@ -36,10 +36,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="graph_package/CircleNode.cpp" />
+		<Unit filename="graph_package/CircleNode.h" />
 		<Unit filename="graph_package/Graph.cpp" />
 		<Unit filename="graph_package/Graph.h" />
-		<Unit filename="graph_package/Node.cpp" />
-		<Unit filename="graph_package/Node.h" />
+		<Unit filename="graph_package/SquareNode.cpp" />
+		<Unit filename="graph_package/SquareNode.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="parser_package/CFG_Reader.cpp" />
 		<Unit filename="parser_package/CFG_Reader.h" />

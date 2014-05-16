@@ -60,8 +60,8 @@ void CFG_Reader::handle_new_rule(string line)
         string node_name = new_non_terminal.str();
 
         //Create new node with new non terminal name
-        if( graph.add_new_node(node_name) )
-            non_terminals.insert(pair<string,int>( node_name,  non_teminals_count++ )); // Add the non terminal to non_terminal list
+        //if( graph.add_new_node(node_name) )
+          //  non_terminals.insert(pair<string,int>( node_name,  non_teminals_count++ )); // Add the non terminal to non_terminal list
 
 
         for(; i < line.length() ; i++)
