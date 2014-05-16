@@ -5,9 +5,19 @@
 string CircleNode::get_name(){
     return name;
 }
-CircleNode::CircleNode()
-{
 
+void CircleNode::add_square_node(SquareNode new_square_node){
+    childs.push_back(new_square_node);
+}
+
+vector<SquareNode> CircleNode::get_childs(){
+    return childs;
+}
+
+
+CircleNode::CircleNode(string new_name)
+{
+    name = new_name;
 }
 
 CircleNode::~CircleNode()
