@@ -8,6 +8,5 @@ int main()
 {
     Test_CFG_Reader cfg_test;
     cfg_test.start_test();
-    cout << "Hello world!" << endl;
     return 0;
 }
