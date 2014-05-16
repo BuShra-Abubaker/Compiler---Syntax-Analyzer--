@@ -18,7 +18,10 @@ class CFG_Reader {
  private:
     CFG_Reader(string file_path);
 
-    Graph get_cfg_graph();
+    //Return the rules graph
+    Graph *get_cfg_graph(){
+        return &graph;
+    }
 
     //Return all the terminals
     unordered_map<string,int> *get_terminals(){

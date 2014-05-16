@@ -86,8 +86,10 @@ void CFG_Reader::handle_RHS(string line , int i , string non_terminal_name)
 
         if( line[i] == '|' )  // End of production
         {
-            children.push_back(production); // add the production to
-            production.clear();
+            if(!production.empty()){
+                children.push_back(production); // add the production to
+                production.clear();
+            }
         }
         else if(line[i] == '\'')  // Start of Terminal
         {
@@ -108,7 +110,7 @@ void CFG_Reader::handle_RHS(string line , int i , string non_terminal_name)
 
             production.push_back(new_teminale_name);
         }
-        else
+        else // Non terminals
         {
             stringstream new_non_terminal;
             while(i < line.length() && line[i] != ' ' && line[i] != '\t')
@@ -135,10 +137,6 @@ void CFG_Reader::handle_RHS(string line , int i , string non_terminal_name)
     // Add new non_terminal and it's children
     for(int j = 0; j < children.size() ; j++)
         graph.add_child(currnet_node , children[j]);
-}
-
-Graph CFG_Reader::get_cfg_graph()
-{
 }
 
 CFG_Reader::~CFG_Reader()
