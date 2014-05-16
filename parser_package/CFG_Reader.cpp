@@ -46,8 +46,8 @@ void CFG_Reader::handle_new_rule(string line)
         while(i < line.length() && line[i] != ' ' && line[i] != '\t') // non terminal name
             new_non_terminal << line[i++];
 
-        while(i < line.length() && (line[i] == ' ' || line[i] == '\t') ) // Skip white space
-            i++;
+        while(i < line.length() && (line[i] == ' ' || line[i++] == '\t') ); // Skip white space
+
 
         if( line[i] != '=') // Error
         {
@@ -70,6 +70,11 @@ void CFG_Reader::handle_new_rule(string line)
                 continue;
 
             if(line[i] == '\''){ // Start of Terminal
+                i++;
+                stringstream new_terminal;
+                while(i < line.length() && line[i] != '\'')
+                    new_non_terminal << line[i++];
+
             }
         }
     }
