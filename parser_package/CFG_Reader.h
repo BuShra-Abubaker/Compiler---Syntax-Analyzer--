@@ -6,6 +6,7 @@
 #include <sstream>
 
 #include "unordered_map"
+#include "unordered_set"
 
 #include "../graph_package/Graph.h"
 
@@ -20,18 +21,18 @@ class CFG_Reader {
     Graph get_cfg_graph();
 
     //Return all the terminals
-    unordered_map<string,int> get_terminals(){
-        return terminals;
+    unordered_map<string,int> *get_terminals(){
+        return &terminals;
     }
 
     //Return all the non terminals
-    unordered_map<string,int> get_non_terminals(){
-        return non_terminals;
+    unordered_map<string,int> *get_non_terminals(){
+        return &non_terminals;
     }
 
     //Return map of all the non terminals which goes to epson directly
-    unordered_map<string,bool> get_epson_non_terminals(){
-        return epson_non_teminals;
+    unordered_set<string> *get_epson_non_terminals(){
+        return &epson_non_teminals;
     }
 
     virtual~CFG_Reader();
@@ -45,7 +46,7 @@ class CFG_Reader {
     unordered_map<string,int> terminals;
     unordered_map<string,int> non_terminals;
 
-    unordered_map<string,bool> epson_non_teminals;
+    unordered_set<string> epson_non_teminals;
 
     void generate_cfg(string  file_path);
     void handle_new_rule(string line);

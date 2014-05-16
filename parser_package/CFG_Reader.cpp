@@ -89,8 +89,7 @@ void CFG_Reader::handle_RHS(string line , int i , string non_terminal_name)
             children.push_back(production); // add the production to
             production.clear();
         }
-
-        if(line[i] == '\'')  // Start of Terminal
+        else if(line[i] == '\'')  // Start of Terminal
         {
             i++;
             stringstream new_terminal;
@@ -115,7 +114,11 @@ void CFG_Reader::handle_RHS(string line , int i , string non_terminal_name)
             while(i < line.length() && line[i] != ' ' && line[i] != '\t')
                 new_non_terminal << line[i++];
 
-            production.push_back(new_non_terminal.str());
+            string temp_non_terminal = new_non_terminal.str();
+            production.push_back(temp_non_terminal);
+
+            if( temp_non_terminal == "\\L") // Add the parent non_terminal as epson non_terminal
+                epson_non_teminals.insert(non_terminal_name);
         }
     }
 
