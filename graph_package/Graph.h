@@ -20,6 +20,7 @@ class Graph {
  private:
      map<string, CircleNode> nodeMap;
      CircleNode start_node;
+     void add_node(string name);
 
 };
 

@@ -11,9 +11,12 @@ class SquareNode;
 class CircleNode
 {
     public:
-        CircleNode();
+        CircleNode(string new_name);
+        CircleNode(){};
         virtual ~CircleNode();
         string get_name();
+        void add_square_node(SquareNode new_square_node);
+        vector<SquareNode> get_childs();
     protected:
     private:
         vector<SquareNode> childs;
