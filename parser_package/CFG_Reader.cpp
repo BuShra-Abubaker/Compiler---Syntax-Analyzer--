@@ -70,7 +70,7 @@ void CFG_Reader::handle_new_rule(string line)
             return;
         }
 
-        handle_RHS(line, i, new_non_terminal.str());
+        handle_RHS(line, i, currnet_node);
     }
 }
 
