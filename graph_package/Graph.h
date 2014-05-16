@@ -1,6 +1,5 @@
 #ifndef Graph_h
 #define Graph_h
-
 #include <iostream>
 #include <vector>
 #include <map>
@@ -8,9 +7,6 @@
 #include "SquareNode.h"
 
 using namespace std;
-
-
-
 
 class Graph {
 

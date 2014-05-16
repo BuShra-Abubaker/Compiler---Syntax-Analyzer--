@@ -3,22 +3,24 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
-#include "../graph_package/Node.h"
 #include "../graph_package/Graph.h"
+#include "../graph_package/SquareNode.h"
 
+struct my_node {string first; SquareNode sq_node;};
 using namespace std;
-//struct myNode {string production; vector<string> first;};
 class First_gen {
 
  public:
     First_gen(Graph *graph);
-    virtual vector<Node> get_first(string  node_name);
+
+    virtual vector<my_node> *get_first(string  node_name);
 
     ~First_gen();
  private:
     Graph *graph;
+    vector<my_node> node_vector;
+    unordered_map<string, vector<my_node> > firsts;
 
-    vector<Node> firsts;
     void generate_firsts();
 
 };
