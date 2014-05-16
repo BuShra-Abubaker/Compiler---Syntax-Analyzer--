@@ -1,6 +1,5 @@
 #include "Graph.h"
 
-
 Graph::Graph(){
     //Constructor
 }
@@ -34,8 +33,6 @@ void Graph::add_child(string  source , vector<string> destination)
     }
 
     nodeMap[source].add_square_node(curNode);
-
-
 }
 
 vector<SquareNode> Graph::get_child(string  node_name)
