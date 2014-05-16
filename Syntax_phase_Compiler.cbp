@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="parser_package" />
 					<Add directory="../Compiler - Syntax Analyzer" />
+					<Add directory="test_package" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="parser_package" />
 					<Add directory="../Compiler - Syntax Analyzer" />
+					<Add directory="test_package" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -36,10 +38,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="graph_package/CircleNode.cpp" />
+		<Unit filename="graph_package/CircleNode.h" />
 		<Unit filename="graph_package/Graph.cpp" />
 		<Unit filename="graph_package/Graph.h" />
-		<Unit filename="graph_package/Node.cpp" />
-		<Unit filename="graph_package/Node.h" />
+		<Unit filename="graph_package/SquareNode.cpp" />
+		<Unit filename="graph_package/SquareNode.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="parser_package/CFG_Reader.cpp" />
 		<Unit filename="parser_package/CFG_Reader.h" />
@@ -49,8 +53,12 @@
 		<Unit filename="parser_package/Follow_gen.h" />
 		<Unit filename="parser_package/Parser.cpp" />
 		<Unit filename="parser_package/Parser.h" />
+		<Unit filename="parser_package/Parsing_table_gen.cpp" />
+		<Unit filename="parser_package/Parsing_table_gen.h" />
 		<Unit filename="parser_package/Validator.cpp" />
 		<Unit filename="parser_package/Validator.h" />
+		<Unit filename="test_package/Test_CFG_Reader.cpp" />
+		<Unit filename="test_package/Test_CFG_Reader.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
