@@ -133,7 +133,7 @@
 1400245853 source:f:\syntax analyzer\graph_package\graph.cpp
 	"Graph.h"
 
-1400245977 f:\syntax analyzer\graph_package\graph.h
+1400246086 f:\syntax analyzer\graph_package\graph.h
 	<iostream>
 
 1400190813 source:f:\syntax analyzer\graph_package\node.cpp
@@ -143,4 +143,14 @@
 
 1400190813 source:f:\syntax analyzer\main.cpp
 	<iostream>
+
+1400190813 source:f:\syntax analyzer\parser_package\cfg_reader.cpp
+	"CFG_Reader.h"
+
+1400190813 f:\syntax analyzer\parser_package\cfg_reader.h
+	<fstream>
+	<iostream>
+	<sstream>
+	"unordered_map"
+	"../graph_package/Graph.h"
 

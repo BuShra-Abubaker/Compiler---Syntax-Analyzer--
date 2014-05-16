@@ -9,7 +9,7 @@ struct SquareNode{
 
 };
 
-struct Node{
+struct CircleNode{
 
 };
 
