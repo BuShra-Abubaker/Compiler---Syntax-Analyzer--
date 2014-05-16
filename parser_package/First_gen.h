@@ -3,6 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include "../graph_package/CircleNode.h"
 #include "../graph_package/Graph.h"
 #include "../graph_package/SquareNode.h"
 
@@ -18,8 +19,8 @@ class First_gen {
     ~First_gen();
  private:
     Graph *graph;
-    vector<my_node> node_vector;
-    unordered_map<string, vector<my_node> > firsts;
+    string start_node;
+    unordered_map<string, vector<my_node> > first_set;
 
     void generate_firsts();
 

@@ -3,6 +3,7 @@
 First_gen::First_gen(Graph *graph){
     //Constructor
     this->graph = graph;
+    start_node = graph->get_start_node;
     generate_firsts();
 }
 
@@ -20,13 +21,16 @@ vector<my_node> *First_gen::get_first(string  node_name)
 //        else get_first(child[i]);
 //    }
 
-    return &(firsts[node_name]);
+    return &(first_set[node_name]);
 }
 
-void First_gen::generate_firsts()
+void First_gen::generate_firsts(string current_node)
 {
-//    string start_node;
-//    if (Node.type != square_node && Node.type != final_node)
+    current_node = start_node;
+//    graph->get_child(); // need getChild to return
+//    SquareNode child;
+
+    //  if (Node.type != square_node && Node.type != final_node)
 //        get_first(start_node);
 
 
