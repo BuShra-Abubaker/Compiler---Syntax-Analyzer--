@@ -1,7 +1,5 @@
 #include "First_gen.h"
 
-
-
 First_gen::First_gen(Graph *graph){
     //Constructor
     this->graph = graph;
@@ -10,10 +8,12 @@ First_gen::First_gen(Graph *graph){
 
 vector<Node> First_gen::get_first(string  node_name)
 {
+    return firsts;
 }
 
 void First_gen::generate_firsts()
 {
+
 
 }
 

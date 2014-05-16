@@ -5,6 +5,14 @@
 
 using namespace std;
 
+struct SquareNode{
+
+};
+
+struct Node{
+
+};
+
 class Graph {
 
  public:

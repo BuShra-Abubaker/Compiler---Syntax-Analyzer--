@@ -1,25 +1,25 @@
 #ifndef First_gen_h
 #define First_gen_h
-
 #include <iostream>
+#include <unordered_map>
 #include <vector>
-
 #include "../graph_package/Node.h"
 #include "../graph_package/Graph.h"
 
 using namespace std;
+//struct myNode {string production; vector<string> first;};
 class First_gen {
 
  public:
     First_gen(Graph *graph);
-
     virtual vector<Node> get_first(string  node_name);
 
-    virtual~First_gen();
+    ~First_gen();
  private:
     Graph *graph;
 
-    virtual void generate_firsts();
+    vector<Node> firsts;
+    void generate_firsts();
 
 };
 
