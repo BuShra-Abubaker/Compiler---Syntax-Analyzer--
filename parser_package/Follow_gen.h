@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector>
-#include "../graph_package/Node.h"
 #include "../graph_package/Graph.h"
 
 using namespace std;
@@ -12,7 +11,7 @@ class Follow_gen {
  public:
     Follow_gen(Graph *graph);
 
-    virtual vector<Node> get_follow(string  node_name);
+    virtual vector<string> get_follow(string  node_name);
 
     virtual~Follow_gen();
  private:
