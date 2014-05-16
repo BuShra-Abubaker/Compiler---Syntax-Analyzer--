@@ -130,12 +130,15 @@
 	"../graph_package/Node.h"
 	"../graph_package/Graph.h"
 
-1400246582 source:f:\syntax analyzer\graph_package\graph.cpp
+1400249073 source:f:\syntax analyzer\graph_package\graph.cpp
 	"Graph.h"
 
-1400246759 f:\syntax analyzer\graph_package\graph.h
+1400249141 f:\syntax analyzer\graph_package\graph.h
 	<iostream>
 	<vector>
+	<map>
+	"CircleNode.h"
+	"SquareNode.h"
 
 1400190813 source:f:\syntax analyzer\graph_package\node.cpp
 	"Node.h"
@@ -196,11 +199,12 @@
 1400246824 source:f:\syntax analyzer\graph_package\circlenode.cpp
 	"CircleNode.h"
 
-1400247084 f:\syntax analyzer\graph_package\circlenode.h
+1400249112 f:\syntax analyzer\graph_package\circlenode.h
 	<vector>
+	<iostream>
 	"SquareNode.h"
 
-1400247072 f:\syntax analyzer\graph_package\squarenode.h
+1400249080 f:\syntax analyzer\graph_package\squarenode.h
 	"CircleNode.h"
 	<vector>
 
