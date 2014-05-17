@@ -27,7 +27,7 @@ vector<my_node> First_gen::generate_firsts(string current_node)
         circle_nodes_child = square_nodes_child[i].get_nodes();
         for(int j = 0 ; j < circle_nodes_child.size() ; j++)
         {
-            if (graph->get_child(circle_nodes_child[j].get_name()).size() == 0 )
+            if (graph->get_child(circle_nodes_child[j].get_name()).size() == 0 )// terminal node
             {
                 if(visited.find(circle_nodes_child[j].get_name()) != visited.end())
                 {
@@ -35,7 +35,7 @@ vector<my_node> First_gen::generate_firsts(string current_node)
                         continue;
 
                     is_LL_1 = false;
-                    cout<< "not LL (1)"<<endl;
+                    cout<< "not LL(1)"<<endl;
                     return node_vector;
                 }
                 my_node node;
@@ -55,10 +55,14 @@ vector<my_node> First_gen::generate_firsts(string current_node)
                 if( !is_LL_1 )
                     break;
 
-                for(int i = 0 ; i < children_first.size(); i++){
-                    node_vector.push_back(children_first[i]);
-                    visited.insert(children_first[i].first);
+                for(int k = 0 ; k < children_first.size(); k++){
+                    my_node node ;
+                    node.sq_node = square_nodes_child[i];
+                    node.first = children_first[k].first;
+                    node_vector.push_back(node);
+                    visited.insert(node.first);
                 }
+
 
                 if( !children_first.empty())
                     break;

@@ -4,20 +4,23 @@
 #include <../graph_package/Graph.h>
 #include "../graph_package/CircleNode.h"
 #include "../graph_package/SquareNode.h"
+#include "Test_CFG_Reader.h"
 
 
 class Left_Recursion
 {
     public:
-        Left_Recursion();
+        Left_Recursion(Graph *graph);
 
-        Graph* eleminate_left_recursion();
+        void eliminate_left_recursion(string current_name);
 
         virtual ~Left_Recursion();
     protected:
     private:
         Graph *graph;
-        CircleNode start_node;
+        CFG_Reader *cfg_reader;
+        unordered_map<string,int> *non_terminals;
+        string start_node;
 };
 
 #endif // LEFT_RECURSION_H

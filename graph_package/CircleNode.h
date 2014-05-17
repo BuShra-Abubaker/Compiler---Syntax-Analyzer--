@@ -15,6 +15,7 @@ class CircleNode
         CircleNode(){};
         virtual ~CircleNode();
         string get_name();
+        void remove_square(int idx);
         void add_square_node(SquareNode new_square_node);
         vector<SquareNode> get_childs();
     protected:

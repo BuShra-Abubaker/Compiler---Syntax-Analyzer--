@@ -14,6 +14,7 @@ class Graph {
     Graph();
     CircleNode get_start_node();
     int size(){return nodeMap.size();};
+    void remove_square(string name, int idx);
     virtual bool add_start_node(string node_name);
     virtual void add_child(string  source , vector<string> destination);
     virtual vector<SquareNode> get_child(string  node_name);
