@@ -5,10 +5,9 @@ Graph::Graph(){
 }
 
 
-
 // if the node was already exist return false else add to the graph and return true
 bool Graph::add_start_node(string node_name){
-    start_node = CircleNode();
+    start_node = CircleNode(node_name);
     nodeMap.insert(pair<string, CircleNode> (node_name, start_node));
 }
 
@@ -18,7 +17,7 @@ CircleNode Graph::get_start_node(){
 
 void Graph::add_node(string name){
     if(nodeMap.find(name) == nodeMap.end()){
-        CircleNode new_node = CircleNode();
+        CircleNode new_node = CircleNode(name);
         nodeMap.insert(pair<string, CircleNode>(name, new_node));
     }
 }

@@ -17,7 +17,7 @@ class First_gen {
 
     virtual vector<my_node> *get_first(string  node_name);
 
-    ~First_gen();
+    virtual ~First_gen();
  private:
     Graph *graph;
     CircleNode start_node;

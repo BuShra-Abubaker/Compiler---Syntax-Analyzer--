@@ -3,7 +3,7 @@
 First_gen::First_gen(Graph *graph, unordered_set<string> *epson_non_teminals ){
     //Constructor
     this->graph = graph;
-    start_node = graph->get_start_node();
+    this->start_node = graph->get_start_node();
     this->epson_non_teminals = epson_non_teminals;
     generate_firsts(start_node.get_name());
 }
