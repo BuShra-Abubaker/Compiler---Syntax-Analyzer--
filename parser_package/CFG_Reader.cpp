@@ -5,6 +5,7 @@ CFG_Reader::CFG_Reader(string file_path)
 {
     //Constructor
     generate_cfg(file_path);
+    terminals.insert(pair<string,int>( "$",  teminals_count++ )); // Add the non terminal to non_terminal list
 }
 
 
@@ -60,7 +61,7 @@ void CFG_Reader::handle_new_rule(string line)
             return; //skip line
         }
 
-        handle_RHS(line , i , new_non_terminal.str());
+        handle_RHS(line , ++i , new_non_terminal.str());
     }
     else   // Old Rule
     {
@@ -70,7 +71,7 @@ void CFG_Reader::handle_new_rule(string line)
             return;
         }
 
-        handle_RHS(line, i, new_non_terminal.str());
+        handle_RHS(line, i, currnet_node);
     }
 }
 
@@ -105,7 +106,7 @@ void CFG_Reader::handle_RHS(string line , int i , string non_terminal_name)
             }
 
             string new_teminale_name = new_terminal.str();
-            if( terminals.find(new_teminale_name) != terminals.end() )//add new non_terminal
+            if( terminals.find(new_teminale_name) == terminals.end() )//add new non_terminal
                 terminals.insert(pair<string,int>( new_teminale_name,  teminals_count++ )); // Add the non terminal to non_terminal list
 
             production.push_back(new_teminale_name);
@@ -131,12 +132,17 @@ void CFG_Reader::handle_RHS(string line , int i , string non_terminal_name)
     currnet_node = non_terminal_name;
 
     //Create new node with new non terminal name
-    if( non_terminals.find(currnet_node) != non_terminals.end() )//add new non_terminal
+    if( non_terminals.find(currnet_node) == non_terminals.end() )//add new non_terminal
         non_terminals.insert(pair<string,int>( currnet_node,  non_teminals_count++ )); // Add the non terminal to non_terminal list
 
     // Add new non_terminal and it's children
-    for(int j = 0; j < children.size() ; j++)
+    for(int j = 0; j < children.size() ; j++){
+        if( first_node ){
+            graph.add_start_node(currnet_node);
+            first_node = false;
+        }
         graph.add_child(currnet_node , children[j]);
+    }
 }
 
 CFG_Reader::~CFG_Reader()

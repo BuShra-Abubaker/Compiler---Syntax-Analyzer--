@@ -12,7 +12,7 @@ class Parsing_table_gen
 {
     public:
         Parsing_table_gen(First_gen *first , Follow_gen *follow , unordered_map<string , int> *terminals , unordered_map<string , int> *non_terminals);
-        vector<vector<string>>*get_parsing_table();
+        vector<vector<string>>get_parsing_table();
         virtual bool is_LL();
         virtual ~Parsing_table_gen();
 

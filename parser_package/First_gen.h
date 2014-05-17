@@ -16,16 +16,23 @@ class First_gen {
     First_gen(Graph *graph, unordered_set<string> *epson_non_teminals);
 
     virtual vector<my_node> *get_first(string  node_name);
+    unordered_map<string, vector<my_node> >*get_firsts(){
+        return &first_set;
+    }
+
+    bool is_LL1_grammar(){
+        return is_LL_1;
+    }
 
     virtual ~First_gen();
  private:
     Graph *graph;
-    CircleNode start_node;
+     bool is_LL_1 = true;
+
     unordered_set<string> *epson_non_teminals;
     unordered_map<string, vector<my_node> > first_set;
 
-    void generate_firsts(string current_node);
-
+    vector<my_node> generate_firsts(string current_node);
 };
 
 #endif // First_gen_h

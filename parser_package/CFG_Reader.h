@@ -15,7 +15,7 @@ using namespace std;
 class CFG_Reader {
 
 
- private:
+ public:
     CFG_Reader(string file_path);
 
     //Return the rules graph
@@ -43,8 +43,10 @@ class CFG_Reader {
     Graph graph;
     string currnet_node;
 
-    int teminals_count = 0;
-    int non_teminals_count = 0;
+    int teminals_count = 1;
+    int non_teminals_count = 1;
+
+    bool first_node = true;
 
     unordered_map<string,int> terminals;
     unordered_map<string,int> non_terminals;
