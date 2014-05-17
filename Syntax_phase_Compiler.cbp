@@ -61,6 +61,8 @@
 		<Unit filename="parser_package/Validator.h" />
 		<Unit filename="test_package/Test_CFG_Reader.cpp" />
 		<Unit filename="test_package/Test_CFG_Reader.h" />
+		<Unit filename="test_package/Traverse_Test.cpp" />
+		<Unit filename="test_package/Traverse_Test.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

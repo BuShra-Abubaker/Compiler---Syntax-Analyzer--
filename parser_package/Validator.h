@@ -1,20 +1,28 @@
 #ifndef Validator_h
 #define Validator_h
 
-#include "vector"
-#include "unordered_map"
+#include <vector>
+#include <unordered_map>
 #include <iostream>
-
-#include "Parsing_table_gen.h"
+#include <stack>
+#include <sstream>
+#include <iterator>
 
 using namespace std;
-class Validator {
+class Validator
+{
 
- public:
-    Validator(Parsing_table_gen  *parsingtable, unordered_map<string , int> *terminals , unordered_map<string , int> *non_terminals);
+public:
+    Validator( vector < vector <string> >parsing_table ,unordered_map<string , int> *terminals , unordered_map<string , int> *non_terminals,string start_symbol);
     virtual vector<string> get_derivations(string  token);
-
     virtual ~Validator();
+
+private :
+
+    unordered_map <string , int> *terminal ;
+    unordered_map <string , int> *non_terminal ;
+    vector < vector <string> > table ;
+    string start ;
 
 };
 

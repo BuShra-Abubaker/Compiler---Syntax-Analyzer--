@@ -4,20 +4,32 @@
 #include <iostream>
 #include <vector>
 #include "unordered_set"
+#include "unordered_map"
 #include "../graph_package/Graph.h"
 
 using namespace std;
-class Follow_gen {
+class Follow_gen
+{
 
- public:
+public:
     Follow_gen(Graph *graph);
+    void init()
+    {
+        unordered_set<string> temp;
+        temp.insert("$");
 
+        follows.insert(pair<string , unordered_set <string> >("S" , temp));
+        temp.clear();
+        temp.insert("b");
+        temp.insert("d");
+        follows.insert(pair<string , unordered_set <string> >("A" , temp));
+    }
     virtual unordered_set<string> get_follow(string  node_name);
 
     virtual~Follow_gen();
- private:
+private:
     Graph *graph;
-
+    unordered_map<string , unordered_set<string> > follows;
     virtual void generate_follows();
 
 };

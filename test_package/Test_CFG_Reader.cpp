@@ -7,6 +7,9 @@
 #include "First_gen.h"
 #include "Traverse_Test.h"
 #include "Left_Recursion.h"
+#include "Parsing_table_gen.h"
+#include "Validator.h"
+
 
 Test_CFG_Reader::Test_CFG_Reader()
 {
@@ -53,12 +56,24 @@ void Test_CFG_Reader::start_test()
 
     }
     cout<< "**************** END OF TRAVERSE ***************" << endl;
+
     Traverse_Test traverse;
     traverse.build(graph,reader);
     traverse.bfs_traverse(graph);
     Left_Recursion left_recursion(graph);
     left_recursion.eliminate_left_recursion("");
 
+
+
+    cout <<"************ Start test validator ************"<<endl;
+    vector <string > log ;
+    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
+    log = valid.get_derivations("c e a d b $");
+    int x = log.size();
+    for (int i =0 ; i<log.size();i++)
+        cout<<log[i]<<endl;
+
+    cout <<"******************* END *********************"<<endl;
 }
 
 Test_CFG_Reader::~Test_CFG_Reader()

@@ -1,4 +1,5 @@
 #include "Left_Recursion.h"
+#include "sstream"
 
 Left_Recursion::Left_Recursion(Graph *graph)
 {
@@ -21,8 +22,13 @@ void Left_Recursion::eliminate_left_recursion(string current_node)
             {
                 // left recursion
                 SquareNode sq_node;
-                string name = "temp" + i ; // choose serial names
-                CircleNode new_node = CircleNode(name);
+
+                stringstream r;
+                string name = "temp";
+                r << name;
+                r << i;
+
+                CircleNode new_node = CircleNode(r.str());
                 for (int j = 0 ; j < square_nodes_child.size(); j++)
                 {
                     // add new_node to every square_node (beta) that not has left recursion
