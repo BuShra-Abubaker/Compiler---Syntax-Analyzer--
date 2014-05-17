@@ -8,7 +8,7 @@ Follow_gen::Follow_gen(Graph *graph){
 
 unordered_set<string> Follow_gen::get_follow(string  node_name)
 {
-
+    return follows.find(node_name)->second;
 
 }
 

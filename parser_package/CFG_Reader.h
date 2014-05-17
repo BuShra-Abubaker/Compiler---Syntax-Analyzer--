@@ -43,8 +43,8 @@ class CFG_Reader {
     Graph graph;
     string currnet_node;
 
-    int teminals_count = 0;
-    int non_teminals_count = 0;
+    int teminals_count = 1;
+    int non_teminals_count = 1;
 
     bool first_node = true;
 
