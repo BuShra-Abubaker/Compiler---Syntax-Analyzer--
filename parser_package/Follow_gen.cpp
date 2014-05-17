@@ -36,32 +36,48 @@ void Follow_gen::generate_follows()
         {
             current_node = q.front();
             q.pop();
+            cout<< "Visit : "<< current_node << endl;
             vector<SquareNode> cur_square = graph->get_child(current_node);
             for(int i = 0 ; i < cur_square.size() ; i++)
             {
                 vector<CircleNode> cur_circle = cur_square[i].get_nodes();
                 for(int j = 0 ; j < cur_circle.size() - 1; j++)
                 {
-                    if( v.find(cur_circle[j].get_name())== v.end() ){
+                    cout<< "Child :" << cur_circle[j].get_name() << endl;
+                    if( is_terminal(cur_circle[j].get_name()))
+                        continue;
+
+                    if( v.find(cur_circle[j].get_name())== v.end() )
+                    {
                         q.push(cur_circle[j].get_name());
                         v.insert(cur_circle[j].get_name());
                     }
 
                     int l = j +1;
                     while( l < cur_circle.size() && add_follow(cur_circle[j].get_name() , cur_circle[l].get_name()) )  // has epson in
-                    {
                         l++;
-                    }
+
                     if( l == cur_circle.size() )  // all the next nodes has epson in their firsts
                     {
                         add_follow_of_my_parent(cur_circle[j].get_name()  , current_node);
                     }
                 }
+
+                if( graph->get_child(cur_circle.back().get_name()).size() != 0 /*non terminal*/ && v.find(cur_circle.back().get_name())== v.end() )
+                {
+                    q.push(cur_circle.back().get_name());
+                    v.insert(cur_circle.back().get_name());
+                }
+                add_follow_of_my_parent(cur_circle.back().get_name()  , current_node);
             }
         }
     }
 }
 
+bool Follow_gen::is_terminal(string name)
+{
+    return (graph->get_child(name).size() == 0);
+}
 // Add follow to the current node , return true if has epson in first
 bool Follow_gen::add_follow(string name , string follow_node)
 {
@@ -73,20 +89,26 @@ bool Follow_gen::add_follow(string name , string follow_node)
     if( follows.find(name) != follows.end()) // found
         temp_follows = follows[name];
 
-    for( int i = 0 ; i < firsts->size() ; i++)  // add to all the first of the next node to my follow
+    if( firsts->size() == 0)  // terminal
     {
-        if((*firsts)[i].first != "\\L" )
-        {
-            if(temp_follows.find((*firsts)[i].first) == temp_follows.end() )  // not found add it
-            {
-                temp_follows.insert((*firsts)[i].first);
-                updated = true;
-            }
-        }
-        else
-            has_epson = true;
+        temp_follows.insert(follow_node);
     }
-
+    else
+    {
+        for( int i = 0 ; i < firsts->size() ; i++)  // add to all the first of the next node to my follow
+        {
+            if((*firsts)[i].first != "\\L" )
+            {
+                if(temp_follows.find((*firsts)[i].first) == temp_follows.end() )  // not found add it
+                {
+                    temp_follows.insert((*firsts)[i].first);
+                    updated = true;
+                }
+            }
+            else
+                has_epson = true;
+        }
+    }
     follows.insert(pair<string, unordered_set<string> >(name, temp_follows));
     return has_epson;
 }
@@ -94,13 +116,20 @@ bool Follow_gen::add_follow(string name , string follow_node)
 // Add all the follow of my parent to my follow
 void Follow_gen::add_follow_of_my_parent(string name , string parent_name)
 {
-    unordered_set<string>  parent_follows = follows[parent_name];
+    if( graph->get_child(name).size() == 0)//terminal
+        return;
 
-    unordered_set<string> temp_follows = follows[name];
+    unordered_set<string>  parent_follows = follows[parent_name];
     unordered_set<string>::const_iterator it;
+
+    unordered_set<string> temp_follows ;
+
+    if( follows.find(name) != follows.end()) // found
+        temp_follows = follows[name];
 
     for( it = parent_follows.begin() ; it != parent_follows.end() ; it++)  // add all the follows to my follow
     {
+        cout<< "ADD from parent : " << *it << endl;
         if( temp_follows.find(*it) == temp_follows.end() )
         {
             temp_follows.insert(*it);

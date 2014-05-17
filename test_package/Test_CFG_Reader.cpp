@@ -94,18 +94,18 @@ void Test_CFG_Reader::start_test()
     cout << "******************Finish First*****************" <<endl;
 
     cout << endl<< "******************FOLLOW TEST*****************" <<endl;
-//    Follow_gen *follow = new Follow_gen(&first , graph);
-//    it2 = non_terminals->begin();
-//    while(it2 != non_terminals->end()){
-//        unordered_set<string>* follows = follow->get_follow(it2->first);
-//        cout<< "Non Terminal : "<< it2->first << endl;
-//        unordered_set<string>::const_iterator it3 = follows->begin();
-//        while(it3 != follows->end()){
-//            cout<< *it3 << endl;
-//            it3++;
-//        }
-//        it2++;
-//    }
+    Follow_gen *follow = new Follow_gen(&first , graph);
+    it2 = non_terminals->begin();
+    while(it2 != non_terminals->end()){
+        unordered_set<string>* follows = follow->get_follow(it2->first);
+        cout<< "Non Terminal : "<< it2->first << endl;
+        unordered_set<string>::const_iterator it3 = follows->begin();
+        while(it3 != follows->end()){
+            cout<< *it3 << endl;
+            it3++;
+        }
+        it2++;
+    }
 
     cout << "******************FNISH FOLLOW*****************" <<endl;
 

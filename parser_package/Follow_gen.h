@@ -26,6 +26,7 @@ private:
 
     unordered_map< string , unordered_set<string> > follows;
 
+    virtual bool is_terminal(string name);
     virtual bool add_follow(string name , string follow_node);
     virtual void add_follow_of_my_parent(string name , string parent_name);
     virtual void generate_follows();
