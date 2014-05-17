@@ -55,14 +55,54 @@ void Test_CFG_Reader::start_test()
         }
 
     }
-    cout<< "**************** END OF TRAVERSE ***************" << endl;
+    cout<< "**************** END OF CFG Reader Test ***************" << endl;
 
-    Traverse_Test traverse;
-    traverse.build(graph,reader);
-    traverse.bfs_traverse(graph);
-    Left_Recursion left_recursion(graph);
-    left_recursion.eliminate_left_recursion("");
+    cout<< "**************** TRAVERSE TEST  ***************" << endl;
+//    Traverse_Test traverse;
+//    traverse.build(graph,reader);
+//    traverse.bfs_traverse(graph);
+//    Left_Recursion left_recursion(graph);
+//    left_recursion.eliminate_left_recursion("");
 
+    cout<< "**************** END OF TRAVERSE Test **********" << endl;
+
+    cout<< "********************  PARSE TABLE TEST *************************" << endl;
+
+    cout<< "Epson states :" << endl;
+    unordered_set<string> * epsons = reader.get_epson_non_terminals();
+    unordered_set<string>::const_iterator it1 = epsons->begin();
+
+    while( it1 != epsons->end())
+    {
+        cout<< *it1 << endl;
+        it1++;
+    }
+
+    unordered_map<string ,int> *non_terminals = reader.get_non_terminals();
+    unordered_map<string,int>::const_iterator it2 = non_terminals->begin();
+    First_gen first( graph ,epsons );
+    while( it2 != non_terminals->end() && first.is_LL1_grammar())
+    {
+        cout<< "Non-Terminals :" << it2->first << endl;
+        vector<my_node> *my_first = first.get_first(it2->first);
+        for(int i = 0 ; i < my_first->size() ; i++)
+        {
+            cout<< "First : " << (*my_first)[i].first <<endl;
+        }
+        it2++;
+    }
+    cout << "******************Finish First*****************" <<endl;
+    Parsing_table_gen table(&first ,  new Follow_gen(&first , graph) , reader.get_terminals() , non_terminals );
+    vector<vector<string>>parse_table = table.get_parsing_table();
+    int row = parse_table.size() ;
+    int column = parse_table[0].size();
+    for(int k = 0 ; k < parse_table.size() ; k++ ){
+
+        for(int j = 0 ; j < parse_table[k].size() ; j++ ){
+            cout<< parse_table[k][j]<<"\t";
+        }
+        cout<<endl;
+    }
 
 
     cout <<"************ Start test validator ************"<<endl;
