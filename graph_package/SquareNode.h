@@ -12,7 +12,8 @@ class SquareNode
     public:
         SquareNode();
         virtual ~SquareNode();
-
+        void add_circle_node(CircleNode new_node);
+        vector<CircleNode> get_nodes();
     protected:
     private:
         vector<CircleNode> nodes;

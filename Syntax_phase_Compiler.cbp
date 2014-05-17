@@ -36,6 +36,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Test_of_table.cpp" />
+		<Unit filename="Test_of_table.h" />
 		<Unit filename="graph_package/CircleNode.cpp" />
 		<Unit filename="graph_package/CircleNode.h" />
 		<Unit filename="graph_package/Graph.cpp" />
