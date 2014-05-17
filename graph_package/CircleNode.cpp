@@ -14,6 +14,11 @@ vector<SquareNode> CircleNode::get_childs(){
     return childs;
 }
 
+void CircleNode::remove_square(int idx)
+{
+    childs.erase(childs.begin() + idx);
+}
+
 
 CircleNode::CircleNode(string new_name)
 {
