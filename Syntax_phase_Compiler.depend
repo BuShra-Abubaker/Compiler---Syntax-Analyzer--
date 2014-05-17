@@ -81,9 +81,10 @@
 1400240622 c:\codeblocks_workspace\syntax_phase_compiler\graph_package\node.h
 	<string>
 
-1400305674 source:c:\codeblocks_workspace\syntax_phase_compiler\main.cpp
+1400350682 source:c:\codeblocks_workspace\syntax_phase_compiler\main.cpp
 	<iostream>
 	"Test_CFG_Reader.h"
+	"sstream"
 
 1400329557 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\cfg_reader.cpp
 	"CFG_Reader.h"
@@ -298,7 +299,7 @@
 	"CFG_Reader.h"
 	<iostream>
 
-1400344166 source:c:\codeblocks_workspace\syntax_phase_compiler\test_package\test_cfg_reader.cpp
+1400350731 source:c:\codeblocks_workspace\syntax_phase_compiler\test_package\test_cfg_reader.cpp
 	"Test_CFG_Reader.h"
 	<queue>
 	<vector>
@@ -307,8 +308,9 @@
 	"../graph_package/SquareNode.h"
 	"First_gen.h"
 	"Traverse_Test.h"
+	"Left_Recursion.h"
 
-1400342302 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\left_recursion.cpp
+1400350359 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\left_recursion.cpp
 	"Left_Recursion.h"
 
 1400339986 c:\codeblocks_workspace\syntax_phase_compiler\parser_package\left_recursion.h
@@ -317,10 +319,14 @@
 	"../graph_package/SquareNode.h"
 	"Test_CFG_Reader.h"
 
-1400344290 c:\codeblocks_workspace\syntax_phase_compiler\test_package\traverse_test.h
+1400344992 c:\codeblocks_workspace\syntax_phase_compiler\test_package\traverse_test.h
+	<queue>
 	"../graph_package/Graph.h"
 	<unordered_set>
 	"CFG_Reader.h"
 	"First_gen.h"
 	<iostream>
+
+1400346349 source:c:\codeblocks_workspace\syntax_phase_compiler\test_package\traverse_test.cpp
+	"Traverse_Test.h"
 

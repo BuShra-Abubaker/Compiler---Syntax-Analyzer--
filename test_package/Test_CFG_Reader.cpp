@@ -6,6 +6,7 @@
 #include "../graph_package/SquareNode.h"
 #include "First_gen.h"
 #include "Traverse_Test.h"
+#include "Left_Recursion.h"
 
 Test_CFG_Reader::Test_CFG_Reader()
 {
@@ -52,9 +53,12 @@ void Test_CFG_Reader::start_test()
 
     }
     cout<< "**************** END OF TRAVERSE ***************" << endl;
-
     Traverse_Test traverse;
     traverse.build(graph,reader);
+    traverse.bfs_traverse(graph);
+    Left_Recursion left_recursion(graph);
+    left_recursion.eliminate_left_recursion("");
+
 }
 
 Test_CFG_Reader::~Test_CFG_Reader()
