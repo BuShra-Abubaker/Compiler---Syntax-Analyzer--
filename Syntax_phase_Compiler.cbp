@@ -51,6 +51,8 @@
 		<Unit filename="parser_package/First_gen.h" />
 		<Unit filename="parser_package/Follow_gen.cpp" />
 		<Unit filename="parser_package/Follow_gen.h" />
+		<Unit filename="parser_package/Left_Recursion.cpp" />
+		<Unit filename="parser_package/Left_Recursion.h" />
 		<Unit filename="parser_package/Parser.cpp" />
 		<Unit filename="parser_package/Parser.h" />
 		<Unit filename="parser_package/Parsing_table_gen.cpp" />
