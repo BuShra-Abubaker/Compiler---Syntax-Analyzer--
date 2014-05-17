@@ -5,10 +5,8 @@ Left_Recursion::Left_Recursion(){
     this->graph = graph;
     this->start_node = graph->get_start_node();
 }
-
 Graph* Left_Recursion::eleminate_left_recursion()
 {
-    vector<SquareNode> left_recursion_nodes;
     vector<CircleNode> circle_nodes_child;
     vector<SquareNode> square_nodes_child = graph->get_child(start_node.get_name());
     for (int i = 0 ; i < square_nodes_child.size() ; i++)
@@ -26,7 +24,7 @@ Graph* Left_Recursion::eleminate_left_recursion()
                 {
                     square_nodes_child[j].add_circle_node(new_node); // push_back
                     new_node.add_square_node(sq_node);
-                    for(int k = 1 ; k < circle_nodes_child.size())
+                    for(int k = 1 ; k < circle_nodes_child.size(); k++)
                         sq_node.add_circle_node(circle_nodes_child[k]);
                     sq_node.add_circle_node(new_node);
 

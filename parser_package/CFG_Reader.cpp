@@ -5,6 +5,7 @@ CFG_Reader::CFG_Reader(string file_path)
 {
     //Constructor
     generate_cfg(file_path);
+    terminals.insert(pair<string,int>( "$",  teminals_count++ )); // Add the non terminal to non_terminal list
 }
 
 
