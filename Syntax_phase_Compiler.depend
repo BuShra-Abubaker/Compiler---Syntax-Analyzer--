@@ -228,3 +228,72 @@
 1400251974 source:c:\codeblocks_workspace\syntax_phase_compiler\parser_package\first_gen.cpp
 	"First_gen.h"
 
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/graph_package/CircleNode.cpp
+	"CircleNode.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/graph_package/CircleNode.h
+	<vector>
+	<iostream>
+	"SquareNode.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/graph_package/SquareNode.h
+	"CircleNode.h"
+	<vector>
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/graph_package/Graph.cpp
+	"Graph.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/graph_package/Graph.h
+	<iostream>
+	<vector>
+	<map>
+	"CircleNode.h"
+	"SquareNode.h"
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/graph_package/SquareNode.cpp
+	"SquareNode.h"
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/main.cpp
+	<iostream>
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/CFG_Reader.cpp
+	"CFG_Reader.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/CFG_Reader.h
+	<fstream>
+	<iostream>
+	<sstream>
+	"unordered_map"
+	"../graph_package/Graph.h"
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/First_gen.cpp
+	"First_gen.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/First_gen.h
+	<iostream>
+	<unordered_map>
+	<vector>
+	"../graph_package/Graph.h"
+	"../graph_package/SquareNode.h"
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/Follow_gen.cpp
+	"Follow_gen.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/Follow_gen.h
+	<iostream>
+	<vector>
+	"../graph_package/Graph.h"
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/Parser.cpp
+	"Parser.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/Parser.h
+
+1400255357 source:/home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/Parsing_table_gen.cpp
+	"Parsing_table_gen.h"
+
+1400255357 /home/eng-mego/Desktop/work Space/Syntax_analyzer/parser_package/Parsing_table_gen.h
+	"Follow_gen.h"
+	"First_gen.h"
+	"unordered_map"
+
