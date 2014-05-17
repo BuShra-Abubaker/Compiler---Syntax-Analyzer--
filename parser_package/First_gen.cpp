@@ -31,6 +31,8 @@ void First_gen::generate_firsts(string current_node)
                 node_vector.push_back(node);
                 if(epson_non_teminals->find(circle_nodes_child[j].get_name()) == epson_non_teminals->end())
                     continue;
+                else
+                    break;
             }
             else
                 generate_firsts(circle_nodes_child[j].get_name());
