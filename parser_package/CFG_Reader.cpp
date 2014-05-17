@@ -48,7 +48,7 @@ void CFG_Reader::handle_new_rule(string line)
         while(i < line.length() && (line[i] == ' ' || line[i] == '\t') ) // Skip white space
             i++;
 
-        while(i < line.length() && line[i] != ' ' && line[i] != '\t') // non terminal name
+        while(i < line.length() && line[i] != ' ' && line[i] != '\t' && line[i] != '=') // non terminal name
             new_non_terminal << line[i++];
 
         while(i < line.length() && (line[i] == ' ' || line[i] == '\t') ) // Skip white space

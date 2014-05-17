@@ -66,8 +66,6 @@ void Test_CFG_Reader::start_test()
 
     cout<< "**************** END OF TRAVERSE Test **********" << endl;
 
-    cout<< "********************  PARSE TABLE TEST *************************" << endl;
-
     cout<< "Epson states :" << endl;
     unordered_set<string> * epsons = reader.get_epson_non_terminals();
     unordered_set<string>::const_iterator it1 = epsons->begin();
@@ -78,8 +76,10 @@ void Test_CFG_Reader::start_test()
         it1++;
     }
 
+    cout << endl<< "******************FIRST TEST*****************" <<endl;
     unordered_map<string ,int> *non_terminals = reader.get_non_terminals();
     unordered_map<string,int>::const_iterator it2 = non_terminals->begin();
+
     First_gen first( graph ,epsons );
     while( it2 != non_terminals->end() && first.is_LL1_grammar())
     {
@@ -92,28 +92,46 @@ void Test_CFG_Reader::start_test()
         it2++;
     }
     cout << "******************Finish First*****************" <<endl;
-    Parsing_table_gen table(&first ,  new Follow_gen(&first , graph) , reader.get_terminals() , non_terminals );
-    vector<vector<string>>parse_table = table.get_parsing_table();
-    int row = parse_table.size() ;
-    int column = parse_table[0].size();
-    for(int k = 0 ; k < parse_table.size() ; k++ ){
 
-        for(int j = 0 ; j < parse_table[k].size() ; j++ ){
-            cout<< parse_table[k][j]<<"\t";
-        }
-        cout<<endl;
-    }
+    cout << endl<< "******************FOLLOW TEST*****************" <<endl;
+//    Follow_gen *follow = new Follow_gen(&first , graph);
+//    it2 = non_terminals->begin();
+//    while(it2 != non_terminals->end()){
+//        unordered_set<string>* follows = follow->get_follow(it2->first);
+//        cout<< "Non Terminal : "<< it2->first << endl;
+//        unordered_set<string>::const_iterator it3 = follows->begin();
+//        while(it3 != follows->end()){
+//            cout<< *it3 << endl;
+//            it3++;
+//        }
+//        it2++;
+//    }
+
+    cout << "******************FNISH FOLLOW*****************" <<endl;
+
+    cout<< endl<<"********************  PARSE TABLE TEST *************************" << endl;
+//    Parsing_table_gen table(&first ,  follow , reader.get_terminals() , non_terminals );
+//    vector<vector<string>>parse_table = table.get_parsing_table();
+//    int row = parse_table.size() ;
+//    int column = parse_table[0].size();
+//    for(int k = 0 ; k < parse_table.size() ; k++ ){
+//
+//        for(int j = 0 ; j < parse_table[k].size() ; j++ ){
+//            cout<< parse_table[k][j]<<"\t";
+//        }
+//        cout<<endl;
+//    }
 
 
     cout <<"************ Start test validator ************"<<endl;
-    vector <string > log ;
-    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
-    log = valid.get_derivations("c e a d b $");
-    int x = log.size();
-    for (int i =0 ; i<log.size();i++)
-        cout<<log[i]<<endl;
+//    vector <string > log ;
+//    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
+//    log = valid.get_derivations("c e a d b $");
+//    int x = log.size();
+//    for (int i =0 ; i<log.size();i++)
+//        cout<<log[i]<<endl;
 
-    cout <<"******************* END *********************"<<endl;
+    cout <<"******************* END OF TEST *********************"<<endl;
 }
 
 Test_CFG_Reader::~Test_CFG_Reader()
