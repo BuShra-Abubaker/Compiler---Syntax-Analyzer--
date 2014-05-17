@@ -42,6 +42,8 @@
 		<Unit filename="graph_package/CircleNode.h" />
 		<Unit filename="graph_package/Graph.cpp" />
 		<Unit filename="graph_package/Graph.h" />
+		<Unit filename="graph_package/Node.cpp" />
+		<Unit filename="graph_package/Node.h" />
 		<Unit filename="graph_package/SquareNode.cpp" />
 		<Unit filename="graph_package/SquareNode.h" />
 		<Unit filename="main.cpp" />
@@ -59,6 +61,8 @@
 		<Unit filename="parser_package/Validator.h" />
 		<Unit filename="test_package/Test_CFG_Reader.cpp" />
 		<Unit filename="test_package/Test_CFG_Reader.h" />
+		<Unit filename="test_package/Test_validator.cpp" />
+		<Unit filename="test_package/Test_validator.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

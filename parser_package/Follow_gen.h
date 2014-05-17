@@ -10,15 +10,15 @@
 #include <queue>
 
 using namespace std;
-class Follow_gen {
-
+class Follow_gen
+{
  public:
     Follow_gen(First_gen *first, Graph *graph);
 
     virtual unordered_set<string>*get_follow(string  node_name);
 
     virtual~Follow_gen();
- private:
+private:
     Graph *graph;
     First_gen *first;
 

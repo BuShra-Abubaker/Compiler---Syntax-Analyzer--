@@ -8,6 +8,7 @@
 #include "../graph_package/SquareNode.h"
 #include "First_gen.h"
 #include "Parsing_table_gen.h"
+#include "Validator.h"
 
 Test_CFG_Reader::Test_CFG_Reader()
 {
@@ -82,9 +83,8 @@ void Test_CFG_Reader::start_test()
 
     cout<< "********************  END OF FIRST TEST *************************" << endl;
     cout<< "********************  PARSE TABLE TEST *************************" << endl;
-    Follow_gen *follow = new Follow_gen(graph);
-    follow->init();
-    Parsing_table_gen table(&first ,  follow, reader.get_terminals() , non_terminals );
+
+    Parsing_table_gen table(&first ,  new Follow_gen(&first , graph) , reader.get_terminals() , non_terminals );
     vector<vector<string>>parse_table = table.get_parsing_table();
     int row = parse_table.size() ;
     int column = parse_table[0].size();
@@ -97,6 +97,16 @@ void Test_CFG_Reader::start_test()
     }
 
     cout<< endl<<"**************** END OF TEST ***************" << endl;
+
+    cout <<"************ Start test validator ************"<<endl;
+    vector <string > log ;
+    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
+    log = valid.get_derivations("c e a d b $");
+    int x = log.size();
+    for (int i =0 ; i<log.size();i++)
+        cout<<log[i]<<endl;
+
+    cout <<"******************* END *********************"<<endl;
 }
 
 Test_CFG_Reader::~Test_CFG_Reader()
