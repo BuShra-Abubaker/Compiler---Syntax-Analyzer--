@@ -8,6 +8,7 @@
 #include "../graph_package/SquareNode.h"
 #include "First_gen.h"
 #include "Parsing_table_gen.h"
+#include "Validator.h"
 
 Test_CFG_Reader::Test_CFG_Reader()
 {
@@ -97,6 +98,16 @@ void Test_CFG_Reader::start_test()
     }
 
     cout<< endl<<"**************** END OF TEST ***************" << endl;
+
+    cout <<"************ Start test validator ************"<<endl;
+    vector <string > log ;
+    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
+    log = valid.get_derivations("c e a d b $");
+    int x = log.size();
+    for (int i =0 ; i<log.size();i++)
+        cout<<log[i]<<endl;
+
+    cout <<"******************* END *********************"<<endl;
 }
 
 Test_CFG_Reader::~Test_CFG_Reader()
