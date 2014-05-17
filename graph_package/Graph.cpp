@@ -15,6 +15,11 @@ CircleNode Graph::get_start_node(){
     return start_node;
 }
 
+void Graph::remove_square(string name, int idx)
+{
+    nodeMap[name].remove_square(idx);
+}
+
 void Graph::add_node(string name){
     if(nodeMap.find(name) == nodeMap.end()){
         CircleNode new_node = CircleNode(name);

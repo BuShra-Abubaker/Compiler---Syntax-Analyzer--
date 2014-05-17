@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "unordered_set"
+#include "unordered_map"
 #include "../graph_package/Graph.h"
 #include "First_gen.h"
 #include <queue>
