@@ -1,20 +1,17 @@
 #include <iostream>
-#include "Test_CFG_Reader.h"
-#include "test_package/Test_CFG_Reader.h"
-#include "test_package/Test_validator.h"
+#include <vector>
 
+#include "Parser.h"
 
 using namespace std;
 
 int main()
 {
 
-
-    Test_CFG_Reader cfg_test;
-    cfg_test.start_test();
-    //Test_validator valid_test;
-    //valid_test.test();
-
+    Parser parser;
+    vector<string> log = parser.get_parse_table("grammarInput.txt" , "");
+    for (int i =0 ; i<log.size();i++)
+        cout<<log[i]<<endl;
 
     return 0;
 }
