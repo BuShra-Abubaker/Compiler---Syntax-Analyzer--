@@ -79,6 +79,12 @@ vector<string> Validator::get_derivations(string  token)
                     valid_stack.push(productions[i]);
             }
         }
+        else
+        {
+            log.push_back("not Acceptance");
+            return log;
+
+        }
     }
     if (valid_stack.size()!=0)
         while(valid_stack.size()>0)
