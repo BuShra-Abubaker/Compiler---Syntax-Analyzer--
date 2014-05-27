@@ -31,7 +31,7 @@ vector<vector<string>>Parsing_table_gen::get_parsing_table()
     unordered_map<string,int>::const_iterator itr1;
     unordered_map<string,int>::const_iterator itr2;
     unordered_set<string>::const_iterator itr4;
-    unordered_set<string> follows;
+    unordered_set<string> *follows;
     unordered_set<string>::const_iterator itr3;
     int terminal_index=0;
     int non_terminal_index=0;
@@ -80,8 +80,8 @@ vector<vector<string>>Parsing_table_gen::get_parsing_table()
             if(first_element=="\\L")
             {
                 follows=follow->get_follow(table[i][0]);
-                itr4= follows.begin();
-                for(int j=0; j<follows.size(); j++)
+                itr4= follows->begin();
+                for(int j=0; j<follows->size(); j++)
                 {
                     terminal_index=(*terminals)[*itr4];
                     itr4++;
@@ -121,8 +121,8 @@ vector<vector<string>>Parsing_table_gen::get_parsing_table()
     {
 
         follows=follow->get_follow(table[i][0]);
-        itr4= follows.begin();
-        for(int j=0; j<follows.size(); j++)
+        itr4= follows->begin();
+        for(int j=0; j<follows->size(); j++)
         {
 
             terminal_index=(*terminals)[*itr4];

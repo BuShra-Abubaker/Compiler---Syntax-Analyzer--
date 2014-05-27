@@ -20,7 +20,7 @@ class Left_Recursion
         Graph *graph;
         CFG_Reader *cfg_reader;
         unordered_map<string,int> *non_terminals;
-        string start_node;
+
 };
 
 #endif // LEFT_RECURSION_H

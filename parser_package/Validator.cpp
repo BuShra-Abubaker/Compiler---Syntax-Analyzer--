@@ -42,16 +42,16 @@ vector<string> Validator::get_derivations(string  token)
             continue;
         }
 
-        int row = (*non_terminal)[valid_stack.top()];
-        int cloumn = (*terminal)[tokens[token_counter]];
+        int row = (*non_terminal)[valid_stack.top()]-1;
+        int cloumn = (*terminal)[tokens[token_counter]]-1;
 
-        if (row==0)
+        if (row==-1)
         {
              log.push_back("Error : illegal missing "+valid_stack.top());
              valid_stack.pop();
         }
 
-        else if (row !=0 && cloumn!=0 )
+        else if (row !=-1 && cloumn!=-1 )
         {
             string production = table[row][cloumn];
 
