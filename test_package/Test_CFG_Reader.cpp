@@ -104,10 +104,21 @@ void Test_CFG_Reader::start_test()
             cout<< *it3 << endl;
             it3++;
         }
+    }
+    cout << "******************FNISH FOLLOW*****************" <<endl;
+
+    cout<< "********************  PARSE TABLE TEST *************************" << endl;
+    Parsing_table_gen table(&first ,  new Follow_gen(&first , graph) , reader.get_terminals() , non_terminals );
+    vector<vector<string>>parse_table = table.get_parsing_table();
+    int row = parse_table.size() ;
+    int column = parse_table[0].size();
+    for(int k = 0 ; k < parse_table.size() ; k++ ){
+
+        for(int j = 0 ; j < parse_table[k].size() ; j++ ){
+            cout<< parse_table[k][j]<<"\t";
+        }
         it2++;
     }
-
-    cout << "******************FNISH FOLLOW*****************" <<endl;
 
     cout<< endl<<"********************  PARSE TABLE TEST *************************" << endl;
 //    Parsing_table_gen table(&first ,  follow , reader.get_terminals() , non_terminals );
