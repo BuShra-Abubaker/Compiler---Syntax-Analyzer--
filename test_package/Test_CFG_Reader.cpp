@@ -1,13 +1,15 @@
 #include "Test_CFG_Reader.h"
-
 #include <queue>
 #include <vector>
-
 #include "../graph_package/CircleNode.h"
 #include "unordered_set"
 #include "../graph_package/SquareNode.h"
 #include "First_gen.h"
+#include "Traverse_Test.h"
+#include "Left_Recursion.h"
 #include "Parsing_table_gen.h"
+#include "Validator.h"
+
 
 Test_CFG_Reader::Test_CFG_Reader()
 {
@@ -53,7 +55,17 @@ void Test_CFG_Reader::start_test()
         }
 
     }
-    cout<< "**************** END OF TRAVERSE ***************" << endl;
+    cout<< "**************** END OF CFG Reader Test ***************" << endl;
+
+    cout<< "**************** TRAVERSE TEST  ***************" << endl;
+//    Traverse_Test traverse;
+//    traverse.build(graph,reader);
+//    traverse.bfs_traverse(graph);
+//    Left_Recursion left_recursion(graph);
+//    left_recursion.eliminate_left_recursion("");
+
+    cout<< "**************** END OF TRAVERSE Test **********" << endl;
+
 
     cout<< "Epson states :" << endl;
     unordered_set<string> * epsons = reader.get_epson_non_terminals();
@@ -61,30 +73,27 @@ void Test_CFG_Reader::start_test()
 
     while( it1 != epsons->end())
     {
-
         cout<< *it1 << endl;
         it1++;
     }
 
     unordered_map<string ,int> *non_terminals = reader.get_non_terminals();
     unordered_map<string,int>::const_iterator it2 = non_terminals->begin();
-
     First_gen first( graph ,epsons );
     while( it2 != non_terminals->end() && first.is_LL1_grammar())
     {
         cout<< "Non-Terminals :" << it2->first << endl;
         vector<my_node> *my_first = first.get_first(it2->first);
-        for(int i = 0 ; i < my_first->size() ; i++){
+        for(int i = 0 ; i < my_first->size() ; i++)
+        {
             cout<< "First : " << (*my_first)[i].first <<endl;
         }
         it2++;
     }
+    cout << "******************Finish First*****************" <<endl;
 
-    cout<< "********************  END OF FIRST TEST *************************" << endl;
     cout<< "********************  PARSE TABLE TEST *************************" << endl;
-    Follow_gen *follow = new Follow_gen(graph);
-    follow->init();
-    Parsing_table_gen table(&first ,  follow, reader.get_terminals() , non_terminals );
+    Parsing_table_gen table(&first ,  new Follow_gen(&first , graph) , reader.get_terminals() , non_terminals );
     vector<vector<string>>parse_table = table.get_parsing_table();
     int row = parse_table.size() ;
     int column = parse_table[0].size();
@@ -96,7 +105,16 @@ void Test_CFG_Reader::start_test()
         cout<<endl;
     }
 
-    cout<< endl<<"**************** END OF TEST ***************" << endl;
+
+    cout <<"************ Start test validator ************"<<endl;
+    vector <string > log ;
+    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
+    log = valid.get_derivations("c e a d b $");
+    int x = log.size();
+    for (int i =0 ; i<log.size();i++)
+        cout<<log[i]<<endl;
+
+    cout <<"******************* END *********************"<<endl;
 }
 
 Test_CFG_Reader::~Test_CFG_Reader()
