@@ -66,7 +66,6 @@ void Test_CFG_Reader::start_test()
 
     cout<< "**************** END OF TRAVERSE Test **********" << endl;
 
-    cout<< "********************  PARSE TABLE TEST *************************" << endl;
 
     cout<< "Epson states :" << endl;
     unordered_set<string> * epsons = reader.get_epson_non_terminals();
@@ -92,6 +91,8 @@ void Test_CFG_Reader::start_test()
         it2++;
     }
     cout << "******************Finish First*****************" <<endl;
+
+    cout<< "********************  PARSE TABLE TEST *************************" << endl;
     Parsing_table_gen table(&first ,  new Follow_gen(&first , graph) , reader.get_terminals() , non_terminals );
     vector<vector<string>>parse_table = table.get_parsing_table();
     int row = parse_table.size() ;

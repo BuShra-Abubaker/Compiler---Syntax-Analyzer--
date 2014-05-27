@@ -2,6 +2,7 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<File name="test_package/Test_CFG_Reader.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2899" topLine="69" />
@@ -11,26 +12,36 @@
 		<Cursor>
 			<Cursor1 position="349" topLine="0" />
 >>>>>>> bb11cff6c9730a4ee2e797e376a53e861e7c903e
-		</Cursor>
-	</File>
-	<File name="parser_package\CFG_Reader.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="graph_package/Graph.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="486" topLine="20" />
+			<Cursor1 position="1114" topLine="35" />
+>>>>>>> 8377528caf9223b1f6fff33641e1a3052233e928
 		</Cursor>
 	</File>
+	<File name="test_package/Test_CFG_Reader.cpp" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3021" topLine="91" />
+		</Cursor>
+	</File>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<File name="graph_package/Graph.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 =======
 	<File name="main.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="graph_package/SquareNode.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> 8377528caf9223b1f6fff33641e1a3052233e928
 		<Cursor>
-			<Cursor1 position="229" topLine="0" />
+			<Cursor1 position="262" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="test_package\Test_CFG_Reader.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="graph_package/CircleNode.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1597" topLine="39" />
+			<Cursor1 position="442" topLine="14" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="graph_package\SquareNode.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="315" topLine="2" />
@@ -113,10 +124,14 @@
 	</File>
 	<File name="graph_package\CircleNode.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 >>>>>>> 7e63034b2407e09bdd65328efb4a795f5a876200
+=======
+	<File name="test_package/Traverse_Test.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> 8377528caf9223b1f6fff33641e1a3052233e928
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<File name="parser_package/Validator.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
@@ -235,24 +250,27 @@
 		</Cursor>
 	</File>
 	<File name="parser_package\Parsing_table_gen.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="325" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="parser_package\Validator.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="286" topLine="0" />
 =======
-	<File name="parser_package\Validator.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> 8377528caf9223b1f6fff33641e1a3052233e928
 		<Cursor>
-			<Cursor1 position="203" topLine="0" />
+			<Cursor1 position="199" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="parser_package\Follow_gen.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="parser_package/CFG_Reader.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
+			<Cursor1 position="4414" topLine="134" />
+		</Cursor>
+	</File>
+	<File name="parser_package/Parsing_table_gen.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="449" topLine="16" />
 >>>>>>> 7e63034b2407e09bdd65328efb4a795f5a876200
 >>>>>>> bb11cff6c9730a4ee2e797e376a53e861e7c903e
+=======
+			<Cursor1 position="0" topLine="132" />
+>>>>>>> 8377528caf9223b1f6fff33641e1a3052233e928
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
