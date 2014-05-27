@@ -104,11 +104,12 @@ void Test_CFG_Reader::start_test()
             cout<< *it3 << endl;
             it3++;
         }
+        it2++;
     }
-    cout << "******************FNISH FOLLOW*****************" <<endl;
+    cout << "******************FNISH FOLLOW*****************" << endl <<endl;
 
-    cout<< "********************  PARSE TABLE TEST *************************" << endl;
-    Parsing_table_gen table(&first ,  new Follow_gen(&first , graph) , reader.get_terminals() , non_terminals );
+    cout<< endl<<"********************  PARSE TABLE TEST *************************" << endl;
+    Parsing_table_gen table(&first ,  follow , reader.get_terminals() , non_terminals );
     vector<vector<string>>parse_table = table.get_parsing_table();
     int row = parse_table.size() ;
     int column = parse_table[0].size();
@@ -117,30 +118,17 @@ void Test_CFG_Reader::start_test()
         for(int j = 0 ; j < parse_table[k].size() ; j++ ){
             cout<< parse_table[k][j]<<"\t";
         }
-        it2++;
+        cout<<endl;
     }
-
-    cout<< endl<<"********************  PARSE TABLE TEST *************************" << endl;
-//    Parsing_table_gen table(&first ,  follow , reader.get_terminals() , non_terminals );
-//    vector<vector<string>>parse_table = table.get_parsing_table();
-//    int row = parse_table.size() ;
-//    int column = parse_table[0].size();
-//    for(int k = 0 ; k < parse_table.size() ; k++ ){
-//
-//        for(int j = 0 ; j < parse_table[k].size() ; j++ ){
-//            cout<< parse_table[k][j]<<"\t";
-//        }
-//        cout<<endl;
-//    }
-
+    cout<< "********************  END OF PARSE TABLE TEST*************************" << endl << endl;
 
     cout <<"************ Start test validator ************"<<endl;
-//    vector <string > log ;
-//    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
-//    log = valid.get_derivations("c e a d b $");
-//    int x = log.size();
-//    for (int i =0 ; i<log.size();i++)
-//        cout<<log[i]<<endl;
+    vector <string > log ;
+    Validator valid (parse_table, reader.get_terminals() ,non_terminals,parse_table[1][0]);
+    log = valid.get_derivations("id + id $");
+    int x = log.size();
+    for (int i =0 ; i<log.size();i++)
+        cout<<log[i]<<endl;
 
     cout <<"******************* END OF TEST *********************"<<endl;
 }

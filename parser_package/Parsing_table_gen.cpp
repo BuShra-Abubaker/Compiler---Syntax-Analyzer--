@@ -90,7 +90,7 @@ vector<vector<string>>Parsing_table_gen::get_parsing_table()
 
                     if(table[non_terminal_index][terminal_index]=="")
                     {
-                        table[non_terminal_index][terminal_index]="\\l";
+                        table[non_terminal_index][terminal_index]="\\L";
                     }
                     else
                     {
