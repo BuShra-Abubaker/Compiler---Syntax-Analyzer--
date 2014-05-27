@@ -17,8 +17,8 @@ string Parsing_table_gen::getProduction(SquareNode node)
     string production="";
     while(i<nods.size())
     {
-        production=production+""+nods[i].get_name();
-        production=production+"";
+        production=production+""+nods[i].get_name()+" ";
+     //   production=production+"";
         i++;
 
     }
