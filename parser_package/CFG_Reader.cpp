@@ -18,8 +18,6 @@ void CFG_Reader::generate_cfg(string  file_path)
     {
         while ( getline (grammar_file,line) )
         {
-            cout << line << endl;
-
             if( line.empty()) // Empty line or white space
                 continue;
 

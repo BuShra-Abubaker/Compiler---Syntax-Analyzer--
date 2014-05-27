@@ -139,15 +139,6 @@ vector<vector<string>>Parsing_table_gen::get_parsing_table()
 
     }
 
-  for(int i = 0 ; i <table.size() ; i++ )
-    {
-        for(int j = 0 ; j < table[i].size() ; j++ )
-        {
-            cout<< table[i][j]<<endl ;
-        }
-        cout<<"new row"<<i<<endl;
-    }
-
     return table;
 }
 
