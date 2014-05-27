@@ -14,15 +14,15 @@ Validator::Validator( vector < vector <string> >parsing_table ,unordered_map<str
     this->table= parsing_table;
 }
 
-vector<string> Validator::get_derivations(string  token)
+vector<string> Validator::get_derivations(vector<string>  tokens)
 {
     vector <string> log ;
     /**
      * split token with space to determine each terminal
      */
-    istringstream buf(token);
-    istream_iterator<string> beg(buf), end;
-    vector<string> tokens(beg, end);
+//    istringstream buf(token);
+//    istream_iterator<string> beg(buf), end;
+//    vector<string> tokens(beg, end);
     /**
      * craet validator stack and push at top start symbol
      */
