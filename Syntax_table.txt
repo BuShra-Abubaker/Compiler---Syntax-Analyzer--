@@ -1,0 +1,9 @@
+Syntax Tree:
+S-->A b S 
+A-->a 
+Error : illegal missing b
+S-->A b S 
+A-->a 
+S-->\L
+
+State : accepted

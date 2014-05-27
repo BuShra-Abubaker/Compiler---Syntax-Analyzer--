@@ -16,10 +16,11 @@ class Parser
 {
     public:
         Parser();
-        vector<string> get_parse_table(string grammarInput , string inpuFile);
+        vector<string> get_parse_table(string grammarInput , string tokenFile);
         virtual ~Parser();
     protected:
     private:
+        vector<string> read_token_file(string tokenFileName);
 };
 
 #endif // PARSER_H
