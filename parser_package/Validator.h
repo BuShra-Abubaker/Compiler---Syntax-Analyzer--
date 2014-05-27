@@ -14,7 +14,7 @@ class Validator
 
 public:
     Validator( vector < vector <string> >parsing_table ,unordered_map<string , int> *terminals , unordered_map<string , int> *non_terminals,string start_symbol);
-    virtual vector<string> get_derivations(string  token);
+    virtual vector<string> get_derivations(vector <string>  tokens);
     virtual ~Validator();
 
 private :

@@ -14,7 +14,7 @@ vector<string> Parser::get_parse_table(string grammarInput , string inpuFile){
     Parsing_table_gen parse_table(&first ,  &follow , reader.get_terminals() , reader.get_non_terminals() );
     Validator valid (parse_table.get_parsing_table(), reader.get_terminals() ,reader.get_non_terminals(),graph->get_start_node().get_name());
 
-    return valid.get_derivations("id + id $");
+ //   return valid.get_derivations("id + id $");
 }
 
 Parser::~Parser()

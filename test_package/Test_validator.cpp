@@ -46,7 +46,7 @@ void Test_validator::test()
 
     cout <<"************ Start test validator ************"<<endl;
     Validator valid (table , &terminal ,&non_terminal,start_symbol);
-    log = valid.get_derivations("c e a d b $");
+//    log = valid.get_derivations("c e a d b $");
     int x = log.size();
     for (int i =0 ; i<log.size();i++)
         cout<<log[i]<<endl;
