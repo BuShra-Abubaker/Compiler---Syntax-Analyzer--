@@ -42,8 +42,6 @@
 		<Unit filename="graph_package/CircleNode.h" />
 		<Unit filename="graph_package/Graph.cpp" />
 		<Unit filename="graph_package/Graph.h" />
-		<Unit filename="graph_package/Node.cpp" />
-		<Unit filename="graph_package/Node.h" />
 		<Unit filename="graph_package/SquareNode.cpp" />
 		<Unit filename="graph_package/SquareNode.h" />
 		<Unit filename="main.cpp" />
