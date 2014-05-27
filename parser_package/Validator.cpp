@@ -42,16 +42,16 @@ vector<string> Validator::get_derivations(string  token)
             continue;
         }
 
-        int row = (*non_terminal)[valid_stack.top()]-1;
-        int cloumn = (*terminal)[tokens[token_counter]]-1;
+        int row = (*non_terminal)[valid_stack.top()];
+        int cloumn = (*terminal)[tokens[token_counter]];
 
-        if (row==-1)
+        if (row==0)
         {
              log.push_back("Error : illegal missing "+valid_stack.top());
              valid_stack.pop();
         }
 
-        else if (row !=-1 && cloumn!=-1 )
+        else if (row !=0 && cloumn!=0 )
         {
             string production = table[row][cloumn];
 
@@ -61,15 +61,18 @@ vector<string> Validator::get_derivations(string  token)
                 token_counter++;
             }
             else if (production == "sync" || production == "\\L" )
-            {   if (production=="\\L")
-                    log.push_back(production);
+            {   if (production=="\\L"){
+                    string temp = valid_stack.top()+"-->"+production;
+                    log.push_back(temp);
+                }
                 valid_stack.pop();
             }
             else
             {
-                valid_stack.pop();
                 istringstream buf(production);
-                log.push_back(production);
+                string temp = valid_stack.top()+"-->"+production;
+                valid_stack.pop();
+                log.push_back(temp);
                 istream_iterator<string> beg(buf), end;
                 vector<string> productions(beg, end);
                 for (int i =productions.size()-1 ;i>=0;i--)
