@@ -1,6 +1,6 @@
 #include "Follow_gen.h"
 
-Follow_gen::Follow_gen( First_gen *first ,Graph *graph)
+Follow_gen::Follow_gen( First_gen *first ,Graph *graph )
 {
     //Constructor
     this->first = first;
@@ -36,18 +36,17 @@ void Follow_gen::generate_follows()
         {
             current_node = q.front();
             q.pop();
-            cout<< "Visit : "<< current_node << endl;
+
             vector<SquareNode> cur_square = graph->get_child(current_node);
             for(int i = 0 ; i < cur_square.size() ; i++)
             {
                 vector<CircleNode> cur_circle = cur_square[i].get_nodes();
-                for(int j = 0 ; j < cur_circle.size() - 1; j++)
+                for(int j = 0 ; j < cur_circle.size() ; j++)
                 {
-                    cout<< "Child :" << cur_circle[j].get_name() << endl;
-                    if( is_terminal(cur_circle[j].get_name()))
+                    if( is_terminal(cur_circle[j].get_name())) // Terminal don't have follow
                         continue;
 
-                    if( v.find(cur_circle[j].get_name())== v.end() )
+                    if( v.find(cur_circle[j].get_name())== v.end() ) // Not visited
                     {
                         q.push(cur_circle[j].get_name());
                         v.insert(cur_circle[j].get_name());
@@ -63,12 +62,12 @@ void Follow_gen::generate_follows()
                     }
                 }
 
-                if( graph->get_child(cur_circle.back().get_name()).size() != 0 /*non terminal*/ && v.find(cur_circle.back().get_name())== v.end() )
-                {
-                    q.push(cur_circle.back().get_name());
-                    v.insert(cur_circle.back().get_name());
-                }
-                add_follow_of_my_parent(cur_circle.back().get_name()  , current_node);
+//                if( graph->get_child(cur_circle.back().get_name()).size() != 0 /*non terminal*/ && v.find(cur_circle.back().get_name())== v.end() )
+//                {
+//                    q.push(cur_circle.back().get_name());
+//                    v.insert(cur_circle.back().get_name());
+//                }
+//                add_follow_of_my_parent(cur_circle.back().get_name()  , current_node);
             }
         }
     }
@@ -89,9 +88,10 @@ bool Follow_gen::add_follow(string name , string follow_node)
     if( follows.find(name) != follows.end()) // found
         temp_follows = follows[name];
 
-    if( firsts->size() == 0)  // terminal
+    if( firsts->size() == 0 && temp_follows.find(follow_node) == temp_follows.end())  // terminal
     {
-        temp_follows.insert(follow_node);
+        temp_follows.insert(follow_node); // add the terminal to follow node
+        updated = true;
     }
     else
     {
@@ -109,6 +109,9 @@ bool Follow_gen::add_follow(string name , string follow_node)
                 has_epson = true;
         }
     }
+
+    if( follows.find(name) != follows.end() ) // If this non termminal has prev follows, remove them and add the new one
+        follows.erase(name);
     follows.insert(pair<string, unordered_set<string> >(name, temp_follows));
     return has_epson;
 }
@@ -124,18 +127,20 @@ void Follow_gen::add_follow_of_my_parent(string name , string parent_name)
 
     unordered_set<string> temp_follows ;
 
-    if( follows.find(name) != follows.end()) // found
+    if( follows.find(name) != follows.end()) // has prev follows
         temp_follows = follows[name];
 
     for( it = parent_follows.begin() ; it != parent_follows.end() ; it++)  // add all the follows to my follow
     {
-        cout<< "ADD from parent : " << *it << endl;
         if( temp_follows.find(*it) == temp_follows.end() )
         {
             temp_follows.insert(*it);
             updated = true;
         }
     }
+
+    if( follows.find(name) != follows.end() ) // If this non termminal has prev follows, remove them and add the new one
+            follows.erase(name);
 
     follows.insert(pair<string, unordered_set<string> >(name, temp_follows));
 }
